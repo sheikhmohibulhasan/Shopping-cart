@@ -101,3 +101,22 @@ checkOutBtn.addEventListener("click", function(){
    document.getElementById("deliverydetails").classList.remove("d-none");
    document.getElementById("shoppingcart").classList.add("d-none");
 })
+// Delivery Details Submit 
+const deliveryDetailsForm = document.getElementById('deliveryDetailsForm');
+deliveryDetailsForm.addEventListener("submit", function(e){
+   e.preventDefault();
+   // Printing Invoice Customer Details 
+   document.getElementById("showCustomerName").innerText = deliveryDetailsForm.customerName.value;
+   document.getElementById("showCustomerPhone").innerText = deliveryDetailsForm.customerPhone.value;
+   document.getElementById("showCustomerEmail").innerText = deliveryDetailsForm.customerEmail.value;
+   document.getElementById("showCustomerAddress").innerText = deliveryDetailsForm.customerAddress.value;
+
+   //Hiding and Showing Elements
+   document.getElementById("shoppingcart").classList.add("d-none");
+   document.getElementById("deliverydetails").classList.add("d-none");
+   document.getElementById("invoice").classList.remove("d-none");
+})
+
+// Setting Total and Subtotal on first load
+updateTotal();
+//Customer Details Form 
